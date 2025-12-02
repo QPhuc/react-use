@@ -6,6 +6,11 @@ export type AsyncStateRetry<T> = AsyncState<T> & {
     retry(): void;
 };
 
+// const { loading, error, value, retry } = useAsyncRetry(asyncFunction, deps);
+// loading: boolean
+// error: Error | undefined
+// value: T | undefined
+// retry: () => void
 const useAsyncRetry = <T>(fn: () => Promise<T>, deps: DependencyList = []) => {
     const [attempt, setAttempt] = useState<number>(0);
     const state = useAsync(fn, [...deps, attempt]);
