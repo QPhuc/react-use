@@ -33,6 +33,12 @@ export type AsyncFnReturn<T extends FunctionReturningPromise = FunctionReturning
     T
 ];
 
+// const [state, callback] = useAsyncFn(asyncFunction, deps, initialState);
+// state: { loading, error, value }
+// callback: (...args) => Promise
+// loading: boolean
+// error: Error | undefined
+// value: T | undefined
 export default function useAsyncFn<T extends FunctionReturningPromise>(
     fn: T,
     deps: DependencyList = [],
