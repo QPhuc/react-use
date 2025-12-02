@@ -1,5 +1,9 @@
 import { useCallback, useState } from 'react';
 
+// const [state, setState] = useSetState({ count: 0, text: '' });
+// setState({ count: 1 });
+// setState(prevState => ({ count: prevState.count + 1 }));
+// setState({ text: 'hello' });
 const useSetState = <T extends object>(
     initialState: T = {} as T
 ): [T, (patch: Partial<T> | ((prevState: T) => Partial<T>)) => void] => {
