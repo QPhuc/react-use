@@ -1,5 +1,9 @@
 import { useState } from "react";
 
+// const [value, setValue] = useLocalStorage("myKey", "defaultValue");
+// value: T
+// setValue: (value: T | (val: T) => T) => void
+// A custom hook that synchronizes a state variable with localStorage.
 export default function useLocalStorage<T>(key: string, initialValue: T) {
     const [storedValue, setStoredValue] = useState<T>(() => {
         if (typeof window === "undefined") {
