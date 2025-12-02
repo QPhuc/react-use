@@ -1,5 +1,8 @@
 import { useEffect, useState } from "react";
 
+// const debouncedValue = useDebounce(value, delay);
+// debouncedValue: any
+// Returns a debounced version of the input value
 export const useDebounce = (value: any, delay = 500) => { 
     const [debouncedValue, setDebouncedValue] = useState(value);
     
