@@ -32,7 +32,6 @@ export type AsyncFnReturn<T extends FunctionReturningPromise = FunctionReturning
     StateFromFunctionReturningPromise<T>,
     T
 ];
-
 // const [state, callback] = useAsyncFn(asyncFunction, deps, initialState);
 // state: { loading, error, value }
 // callback: (...args) => Promise
