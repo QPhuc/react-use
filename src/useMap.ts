@@ -11,6 +11,15 @@ export interface Actions<T extends object> extends StableActions<T> {
     get: <K extends keyof T>(key: K) => T[K];
 }
 
+// const [map, actions] = useMap(initialMap);
+// map: T
+// actions: {
+//   get: (key) => value
+//   set: (key, value) => void
+//   setAll: (newMap) => void
+//   remove: (key) => void
+//   reset: () => void
+// }
 const useMap = <T extends object = any>(initialMap: T = {} as T): [T, Actions<T>] => {
     const [map, set] = useState<T>(initialMap);
 
