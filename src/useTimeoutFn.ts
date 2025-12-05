@@ -2,6 +2,10 @@ import { useCallback, useEffect, useRef } from 'react';
 
 export type UseTimeoutFnReturn = [() => boolean | null, () => void, () => void];
 
+// const [isReady, clear, set] = useTimeoutFn(fn, ms);
+// isReady: () => boolean | null
+// clear: () => void
+// set: () => void
 export default function useTimeoutFn(fn: Function, ms: number = 0): UseTimeoutFnReturn {
     const ready = useRef<boolean | null>(false);
     const timeout = useRef<ReturnType<typeof setTimeout>>(0);
