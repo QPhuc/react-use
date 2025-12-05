@@ -9,6 +9,15 @@ export interface CounterActions {
     reset: (value?: IHookStateSetAction<number>) => void;
 }
 
+// const [count, actions] = useCounter(initialValue, max, min);
+// count: number
+// actions: {
+//   inc: (delta?) => void
+//   dec: (delta?) => void
+//   get: () => number
+//   set: (value) => void
+//   reset: (value?) => void
+// }
 export default function useCounter(
     initialValue: IHookStateInitAction<number> = 0,
     max: number | null = null,
